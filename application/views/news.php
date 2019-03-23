@@ -12,7 +12,13 @@
     <div id="list-flex">
         <div id="list" class="news-list">
             <ul id="list-articles">
-                <li v-for="article in articlesList">{{ article.headline }} - {{ article.content }}</li>
+                <!-- <li v-for="article in articlesList">{{ article.headline }} - {{ article.content }}</li> -->
+                <?php foreach ($articles as $article): ?>
+                    <strong><?php echo $article['title']; ?></strong><a id="read-more" href="<?php echo $article['url'] ?>" target="_blank"> Read More</a>
+                    <p><?php echo $article['description']; ?></p>
+
+                    <hr>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>

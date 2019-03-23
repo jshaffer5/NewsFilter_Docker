@@ -1,3 +1,9 @@
 body {
-    background: yellow;
+    background: #eeeeee;
+}
+
+a#read-more {
+    text-decoration: none;
+    color: #3cb6db;
+    margin-left: 8px;
 }
