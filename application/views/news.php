@@ -24,9 +24,9 @@
     </div>
 </div>
 <!--DEVELOPMENT ONLY LATEST RELEASE -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 <!-- PRODUCTION USE STABLE RELEASE -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
 <script src="javascript/news.js"></script>
 </body>
 </html>
