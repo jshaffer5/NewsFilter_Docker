@@ -32,6 +32,11 @@ a#read-more {
     margin-left: 8px;
 }
 
+a#read-more:hover {
+    color: #1a91b6;
+
+}
+
 #list {
     margin: 0 1rem;
 }
