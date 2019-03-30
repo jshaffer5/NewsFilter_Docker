@@ -9,7 +9,6 @@
 </head>
 <body>
 <div class="container">
-
     <!-- navbar -->  
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
@@ -24,7 +23,6 @@
 
 </div>
 <div class="main">
-    
     <div id="list" class="news-list">
         <h1>News List</h1>
         <!-- <div class="article-card" style="display:flex"> -->
