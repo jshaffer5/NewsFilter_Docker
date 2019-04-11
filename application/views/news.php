@@ -1,3 +1,6 @@
+<?php session_cache_limiter('nocache');
+header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +11,17 @@
     
 </head>
 <body>
-<!-- <div class="container">
-    navbar  
+<div class="container">
+
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+        <h2 class="my-0 mr-md-auto font-weight-normal" style="color:#3a91b6;">NewsFilter</h2>
         <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
+        <a class="btn btn-sm btn-primary" onclick="window.location.reload()" href="#">Refresh Page</a>
         </nav>
         <a class="btn btn-outline-primary" href="#">Sign in</a>
     </div>
 
-</div> -->
+</div>
 
 <div class="main">
     <div id="list" class="news-list">
