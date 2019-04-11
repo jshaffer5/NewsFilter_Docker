@@ -1,6 +1,6 @@
 {
 	"description": "News app for filtered headlines with links",
-	"name": "NewsFilters",
+	"name": "js/newsfilters",
 	"type": "project",
 	"homepage": "https://newsfilters.herokuapp.com",
 	"license": "MIT",
