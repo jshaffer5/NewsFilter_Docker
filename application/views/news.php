@@ -128,6 +128,6 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
 </div>
 <!-- PRODUCTION USE STABLE VUE.JS RELEASE -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
-<!-- <script src="javascript/news.js"></script> -->
+<script src="javascript/login.js"></script>
 </body>
 </html>
