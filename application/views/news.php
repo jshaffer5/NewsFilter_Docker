@@ -19,7 +19,7 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
         <nav class="my-2 my-md-0 mr-md-3">
         <a class="btn btn-sm btn-primary" onclick="window.location.reload()" href="#">Refresh Page</a>
         </nav>
-        <a class="btn btn-outline-primary" href="DOWNLOADURL" onclick="javascript:window.location.href='login'; return false;">Sign in</a>
+        <a class="btn btn-outline-primary" href="/login">Sign in</a>
     </div>
 
 </div>
