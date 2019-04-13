@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost', //'us-cdbr-iron-east-02.cleardb.net',
-	'username' => 'js', //'ba3a066d5320a7',
-	'password' => '', //'13fa212b',
-	'database' => 'js', //'heroku_09181b796887d22',
-	'dbdriver' => 'mysqli',
+	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=newsfilter',
+	'hostname' => 'localhost',
+	'username' => 'js',
+	'password' => '',
+	'database' => 'newsfilter',
+	'dbdriver' => 'pdo', //'mysqli'
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -94,3 +94,5 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+

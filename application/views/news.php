@@ -11,6 +11,7 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
     
 </head>
 <body>
+
 <div class="container">
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -18,7 +19,7 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
         <nav class="my-2 my-md-0 mr-md-3">
         <a class="btn btn-sm btn-primary" onclick="window.location.reload()" href="#">Refresh Page</a>
         </nav>
-        <a class="btn btn-outline-primary" href="#">Sign in</a>
+        <a class="btn btn-outline-primary" href="DOWNLOADURL" onclick="javascript:window.location.href='login'; return false;">Sign in</a>
     </div>
 
 </div>
@@ -26,8 +27,83 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
 <div class="main">
     <div id="list" class="news-list">
         <h1>News List</h1>
-        <!-- <div class="article-card" style="display:flex"> -->
-            <!-- <li v-for="article in articlesList">{{ article.headline }} - {{ article.content }}</li> -->
+
+        <?php
+            $db["host"] = "localhost";
+            $db["port"] = 5432;
+            $db["user"] = "js";
+            $db["pass"] = "";
+            $db["name"] = "newsfilter";
+            // $pdo = new PDO("pgsql:" . sprintf(
+            //     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+            //     $db["host"],
+            //     $db["port"],
+            //     $db["user"],
+            //     $db["pass"],
+            //     $db["name"],
+            //     // ltrim($db["path"], "/")
+            // ));
+            $db = pg_connect("host=localhost port=5432 dbname=newsfilter user=js");
+            if ($db) {
+                echo 'pg_connect connection to the PostgreSQL database sever has been established successfully.';
+                } else {
+                    echo 'pg_connect failed';
+                } 
+
+            // if ($pdo) {
+            // echo 'A connection to the PostgreSQL database sever has been established successfully.';
+            // } else {
+            //     echo 'Connection failed';
+            // }
+
+            // $sql =<<<EOF
+            //     CREATE TABLE COMPANY
+            //     (ID INT PRIMARY KEY     NOT NULL,
+            //     NAME           TEXT    NOT NULL,
+            //     AGE            INT     NOT NULL, 
+            //     ADDRESS        CHAR(50),
+            //     SALARY         REAL);
+            // EOF;
+
+            // $sql =<<<EOF
+            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+            //     VALUES (1, 'Paul', 32, 'California', 20000.00 );
+
+            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+            //     VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
+
+            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+            //     VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
+
+            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+            //     VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
+            // EOF;
+
+            // $sql =<<<EOF
+            //     INSERT INTO users (username, password)
+            //     VALUES ('bar', 'bar');
+
+            //     INSERT INTO users (username, password)
+            //     VALUES ('baz', 'baz');
+
+            // EOF;
+
+            // $username = "js"; //$_POST["username"];
+            // $password = "pass";
+            // $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+
+            // $ret = pg_query($db, $sql);
+            // if(!$ret) {
+            //     echo pg_last_error($db);
+            // } else {
+            //     echo "\nRecords created successfully\n";
+            // }
+            // pg_close($db);
+
+
+            
+        ?>
+        
 
             <?php foreach ($articles as $article): ?>
 
@@ -47,12 +123,11 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
 
                 <hr>
             <?php endforeach; ?>
-        <!-- </div> -->
     
     </div>
 </div>
 <!-- PRODUCTION USE STABLE VUE.JS RELEASE -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
 <!-- <script src="javascript/news.js"></script> -->
 </body>
 </html>
