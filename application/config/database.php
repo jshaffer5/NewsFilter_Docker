@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=newsfilter',
-	'hostname' => 'localhost',
-	'username' => 'js',
-	'password' => '',
-	'database' => 'newsfilter',
-	'dbdriver' => 'pdo', //'mysqli'
+	'dsn'	=> '',
+	'hostname' => 'us-cdbr-iron-east-02.cleardb.net',
+	'username' => 'ba3a066d5320a7',
+	'password' => '13fa212b',
+	'database' => 'heroku_09181b796887d22',
+	'dbdriver' => 'mysqli', 
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

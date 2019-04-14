@@ -1,8 +1,8 @@
 <?php
 session_start();
-	if(isset($_SESSION['user'])){
-		header('location:list.php');
-	}
+	// if(isset($_SESSION['user'])){
+	// 	header('location:list.php');
+	// }
 ?>
 <!DOCTYPE html>
 <html>
