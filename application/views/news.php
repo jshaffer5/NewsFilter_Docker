@@ -4,12 +4,16 @@ header("Cache-Control: no-cache");
 header("Pragma: no-cache");
 header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); 
 
+$logged_in = TRUE;
 if(!isset($_SESSION['user'])||(trim ($_SESSION['user']) == '')){
-    header('location:login');
+    // header('location:login');
+    $logged_in = FALSE;
+    echo "NO USER SESSION";
     
 }
 //BYPASSING LOGIN FOR DEVELOPMENT
-echo "<a>{$_SESSION['user']}</a>";
+// echo "<a>{$_SESSION['user']} {$logged_in}</a>";
+
 ?>
 
 
@@ -31,7 +35,12 @@ echo "<a>{$_SESSION['user']}</a>";
         <nav class="my-2 my-md-0 mr-md-3">
         <a class="btn btn-sm btn-primary" onclick="window.location.reload()" href="#">Refresh Page</a>
         </nav>
-        <a class="btn btn-outline-primary" href="/login">Sign in</a>
+        <?php if ($logged_in) { ?>
+            <a class="btn btn-outline-primary" href="/login">Log out</a>
+        <?php } else { ?>
+            <a class="btn btn-outline-primary" href="/login">Sign in</a>
+        <?php } ?>
+        
     </div>
 
 </div>

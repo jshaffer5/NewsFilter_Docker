@@ -16,6 +16,8 @@ class Login extends CI_Controller {
         if (isset($user)) {
             $out['error'] = false;
             $out['message'] = "Login successful";
+            session_start();
+            $_SESSION["user"] = $user;
         } else {
         $out['error'] = true;
         $out['message'] = "Username or password incorrect";

@@ -29,7 +29,7 @@ var app = new Vue({
 						// Wait 3 seconds while displaying error/success message, then open success.php
 						setTimeout(function() {
 						window.location.href = "/news";
-						}, 3000);
+						}, 0);
 					}
 				}
 			};
