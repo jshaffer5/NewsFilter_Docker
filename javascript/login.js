@@ -33,7 +33,10 @@ var app = new Vue({
 					}
 				}
 			};
-			xhr.open("POST", "login_api.php", true);
+			var base_url = window.location.origin;
+			var login_url = base_url + '/login/test';
+			console.log(login_url);
+			xhr.open("POST", login_url, true);
 			xhr.send(logForm);
 		},
  

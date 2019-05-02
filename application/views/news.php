@@ -1,5 +1,17 @@
-<?php session_cache_limiter('nocache');
-header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
+<?php 
+session_start();
+header("Cache-Control: no-cache");
+header("Pragma: no-cache");
+header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); 
+
+if(!isset($_SESSION['user'])||(trim ($_SESSION['user']) == '')){
+    header('location:login');
+    
+}
+//BYPASSING LOGIN FOR DEVELOPMENT
+echo "<a>{$_SESSION['user']}</a>";
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -29,79 +41,13 @@ header('Expires: Thu, 4 Jul 1996 7:34:00 GMT'); ?>
         <h1>News List</h1>
 
         <?php
-            $db["host"] = "localhost";
-            $db["port"] = 5432;
-            $db["user"] = "js";
-            $db["pass"] = "";
-            $db["name"] = "newsfilter";
-            // $pdo = new PDO("pgsql:" . sprintf(
-            //     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-            //     $db["host"],
-            //     $db["port"],
-            //     $db["user"],
-            //     $db["pass"],
-            //     $db["name"],
-            //     // ltrim($db["path"], "/")
-            // ));
-            $db = pg_connect("host=localhost port=5432 dbname=newsfilter user=js");
-            if ($db) {
-                echo 'pg_connect connection to the PostgreSQL database sever has been established successfully.';
-                } else {
-                    echo 'pg_connect failed';
-                } 
-
-            // if ($pdo) {
-            // echo 'A connection to the PostgreSQL database sever has been established successfully.';
+  
+            // $db = pg_connect("host=localhost port=5432 dbname=newsfilter user=js");
+            // if ($db) {
+            //     echo 'pg_connect connection to the PostgreSQL database sever has been established successfully.';
             // } else {
-            //     echo 'Connection failed';
-            // }
-
-            // $sql =<<<EOF
-            //     CREATE TABLE COMPANY
-            //     (ID INT PRIMARY KEY     NOT NULL,
-            //     NAME           TEXT    NOT NULL,
-            //     AGE            INT     NOT NULL, 
-            //     ADDRESS        CHAR(50),
-            //     SALARY         REAL);
-            // EOF;
-
-            // $sql =<<<EOF
-            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-            //     VALUES (1, 'Paul', 32, 'California', 20000.00 );
-
-            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-            //     VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
-
-            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-            //     VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
-
-            //     INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-            //     VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
-            // EOF;
-
-            // $sql =<<<EOF
-            //     INSERT INTO users (username, password)
-            //     VALUES ('bar', 'bar');
-
-            //     INSERT INTO users (username, password)
-            //     VALUES ('baz', 'baz');
-
-            // EOF;
-
-            // $username = "js"; //$_POST["username"];
-            // $password = "pass";
-            // $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-
-            // $ret = pg_query($db, $sql);
-            // if(!$ret) {
-            //     echo pg_last_error($db);
-            // } else {
-            //     echo "\nRecords created successfully\n";
-            // }
-            // pg_close($db);
-
-
-            
+            //     echo 'pg_connect failed';
+            // } 
         ?>
         
 
