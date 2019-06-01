@@ -42,7 +42,13 @@ session_destroy();
 			</div>
  
 		</div>
+		
 	</div>
+
+	<div class="col-md-4 col-md-offset-4 small" id="skip-login">
+			<p class="text-center"> <a href="/">Login as a guest<a> </p>
+	</div>
+
 </div>
 <!-- PRODUCTION USE STABLE VUE.JS RELEASE -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
